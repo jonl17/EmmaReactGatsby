@@ -25,9 +25,13 @@ const Container = ({ artwork }) => {
       </DescriptionBox>
       {myndir.map((item, index) => (
         <Block key={index}>
-          <Img
-            fluid={item.mynd.myndaskra.localFile.childImageSharp.fluid}
-          ></Img>
+          {item.mynd.myndaskra === null ? (
+            <p>null</p>
+          ) : (
+            <Img
+              fluid={item.mynd.myndaskra.localFile.childImageSharp.fluid}
+            ></Img>
+          )}
           {item.mynd.undirtexti ? <p>{item.mynd.texti}</p> : ""}
         </Block>
       ))}
