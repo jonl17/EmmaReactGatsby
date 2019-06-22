@@ -14,14 +14,14 @@ import {
   DescriptionBox,
 } from "./Styled"
 
-const Container = ({ artwork }) => {
+const Container = ({ artwork, device }) => {
   const { description, myndir, material, year } = artwork.acf
   return (
     <ContainerStyled>
       <ExitBtn></ExitBtn>
-      <TitleContainer>
+      <TitleContainer device={device}>
         <Title>{artwork.title}</Title>
-        <Year>{year}</Year>
+        <Year device={device}>{year}</Year>
       </TitleContainer>
       <DescriptionBox>
         <p>{description}</p>
@@ -43,4 +43,8 @@ const Container = ({ artwork }) => {
   )
 }
 
-export default connect()(Container)
+const mapStateToProps = state => ({
+  device: state.reducer.device,
+})
+
+export default connect(mapStateToProps)(Container)
