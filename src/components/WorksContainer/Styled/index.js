@@ -5,6 +5,7 @@ export const ContainerStyled = styled.div``
 export const TitleContainer = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
+  margin-top: 25px;
 `
 
 export const Year = styled.h2`

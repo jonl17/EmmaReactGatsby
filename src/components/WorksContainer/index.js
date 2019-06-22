@@ -2,6 +2,9 @@ import React from "react"
 
 import Block from "../NewsBlock"
 import Img from "gatsby-image"
+import ExitBtn from "../ExitButton"
+
+import { connect } from "react-redux"
 
 import {
   ContainerStyled,
@@ -15,6 +18,7 @@ const Container = ({ artwork }) => {
   const { description, myndir, material, year } = artwork.acf
   return (
     <ContainerStyled>
+      <ExitBtn></ExitBtn>
       <TitleContainer>
         <Title>{artwork.title}</Title>
         <Year>{year}</Year>
@@ -26,7 +30,7 @@ const Container = ({ artwork }) => {
       {myndir.map((item, index) => (
         <Block key={index}>
           {item.mynd.myndaskra === null ? (
-            <p>null</p>
+            ""
           ) : (
             <Img
               fluid={item.mynd.myndaskra.localFile.childImageSharp.fluid}
@@ -39,4 +43,4 @@ const Container = ({ artwork }) => {
   )
 }
 
-export default Container
+export default connect()(Container)
