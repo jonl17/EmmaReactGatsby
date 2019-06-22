@@ -3,7 +3,6 @@ import styled, { css } from "styled-components"
 import { connect } from "react-redux"
 
 export const BlockStyled = styled.div`
-  height: 100%;
   width: 100%;
   box-sizing: border-box;
   ${props =>
