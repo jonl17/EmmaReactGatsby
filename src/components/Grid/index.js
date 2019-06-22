@@ -3,7 +3,6 @@ import styled, { css } from "styled-components"
 export const NewsGrid = styled.div`
   display: grid;
   grid-gap: 75px;
-  height: 100%;
   width: 100%;
   ${props =>
     props.device === `browser` &&

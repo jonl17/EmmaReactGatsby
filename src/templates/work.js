@@ -1,11 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 import Wrap from "../components/Wrap"
 import { NewsGrid } from "../components/Grid"
-import { Block, Text } from "../components/NewsBlock"
 import { connect } from "react-redux"
 import { GlobalStyles } from "../components/GlobalStyles.js"
+import Container from "../components/WorksContainer"
 
 const WorkTemplate = ({ data, device }) => {
   console.log(data.wordpressWpWorks)
@@ -13,16 +12,8 @@ const WorkTemplate = ({ data, device }) => {
     <>
       <GlobalStyles></GlobalStyles>
       <Wrap>
-        <h1>{data.wordpressWpWorks.title}</h1>
         <NewsGrid device={device}>
-          <p>{data.wordpressWpWorks.acf.description}</p>
-          {data.wordpressWpWorks.acf.myndir.map(item => (
-            <Block>
-              <Img
-                fluid={item.mynd.myndaskra.localFile.childImageSharp.fluid}
-              ></Img>
-            </Block>
-          ))}
+          <Container artwork={data.wordpressWpWorks}></Container>
         </NewsGrid>
       </Wrap>
     </>
@@ -40,6 +31,8 @@ export const query = graphql`
         year
         myndir {
           mynd {
+            undirtexti
+            texti
             myndaskra {
               localFile {
                 childImageSharp {

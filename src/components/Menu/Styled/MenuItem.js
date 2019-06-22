@@ -64,8 +64,8 @@ class MenuItem extends React.Component {
               : { display: `none` }
           }
         >
-          {this.props.works.map(item => (
-            <DropDownMenuItem to={item.node.slug}>
+          {this.props.works.map((item, index) => (
+            <DropDownMenuItem key={index} to={item.node.slug}>
               <DropDownText>{item.node.title}</DropDownText>
             </DropDownMenuItem>
           ))}
