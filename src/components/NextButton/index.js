@@ -11,13 +11,14 @@ const Button = styled(Link)`
 `
 
 const NextButton = ({ works, nextWorkIndex, dispatch }) => {
+  console.log(works)
   return (
     <Button
       onClick={() => dispatch(setCurrentWorkIndex(nextWorkIndex))}
-      to={"/" + works[nextWorkIndex].node.slug}
+      to={"/"} //  + works[nextWorkIndex].node.slug
     >
       <p style={{ color: "black" }}>
-        Next work: {works[nextWorkIndex].node.title.replace("#038;", "")}
+        {/* Next work: {works[nextWorkIndex].node.title.replace("#038;", "")} */}
       </p>
     </Button>
   )
