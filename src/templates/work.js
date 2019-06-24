@@ -10,10 +10,10 @@ const WorkTemplate = ({ data, device }) => {
   console.log(data.wordpressWpWorks)
   return (
     <>
-      <GlobalStyles></GlobalStyles>
+      <GlobalStyles />
       <Wrap>
         <NewsGrid device={device}>
-          <Container artwork={data.wordpressWpWorks}></Container>
+          <Container artwork={data.wordpressWpWorks} />
         </NewsGrid>
       </Wrap>
     </>
@@ -23,8 +23,8 @@ const WorkTemplate = ({ data, device }) => {
 export const query = graphql`
   query($slug: String) {
     wordpressWpWorks(slug: { eq: $slug }) {
-      title
       slug
+      title
       acf {
         description
         material
