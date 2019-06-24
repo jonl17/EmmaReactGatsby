@@ -15,6 +15,16 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     {
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: "wn3mros3",
+        dataset: "work",
+        // a token with read permissions is required
+        // if you have a private dataset
+        token: process.env.MY_SANITY_TOKEN,
+      },
+    },
+    {
       resolve: "gatsby-source-wordpress",
       options: {
         /*

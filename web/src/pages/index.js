@@ -13,9 +13,9 @@ const index = ({ data, device }) => {
     <>
       <GlobalStyles></GlobalStyles>
       <Header metadata={data.site.siteMetadata}></Header>
-      <Wrap artworks={data.allWordpressWpWorks.edges}>
+      <Wrap>
         <Grid device={device}>
-          {data.allWordpressWpWorks.edges.map((item, index) => (
+          {/* {data.allWordpressWpWorks.edges.map((item, index) => (
             <Link key={index} to={"/" + item.node.slug}>
               <Img
                 key={index}
@@ -24,7 +24,7 @@ const index = ({ data, device }) => {
                 }
               ></Img>
             </Link>
-          ))}
+          ))} */}
         </Grid>
       </Wrap>
     </>
@@ -43,28 +43,6 @@ export const query = graphql`
       siteMetadata {
         title
         menuItems
-      }
-    }
-    allWordpressWpWorks {
-      edges {
-        node {
-          title
-          slug
-          featured_media {
-            source_url
-          }
-          acf {
-            frontpage_image {
-              localFile {
-                childImageSharp {
-                  fluid {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-          }
-        }
       }
     }
   }
