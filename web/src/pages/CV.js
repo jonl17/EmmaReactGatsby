@@ -15,7 +15,7 @@ const CV = ({ data }) => {
       <Wrap>
         <PageWrap>
           <Block>
-            <Title>Education</Title>
+            <Title>Education BLA</Title>
             {data.wordpressPage.acf.education
               .slice(0)
               .reverse()
