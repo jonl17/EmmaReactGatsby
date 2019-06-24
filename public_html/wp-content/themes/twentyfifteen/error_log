@@ -1,0 +1,17 @@
+[27-Oct-2018 10:33:44 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/index.php on line 17
+[08-Feb-2019 19:49:48 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/404.php on line 10
+[08-Feb-2019 19:49:51 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/404.php on line 10
+[23-Mar-2019 03:35:21 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/404.php on line 10
+[06-May-2019 16:34:03 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/404.php on line 10
+[08-May-2019 19:42:47 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/archive.php on line 19
+[09-May-2019 01:56:25 America/New_York] PHP Fatal error:  Call to undefined function the_id() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/content-link.php on line 13
+[10-May-2019 13:29:10 America/New_York] PHP Fatal error:  Call to undefined function _e() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/author-bio.php on line 12
+[12-May-2019 04:47:15 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/index.php on line 17
+[12-May-2019 10:30:21 America/New_York] PHP Fatal error:  Call to undefined function the_id() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/content.php on line 13
+[13-May-2019 08:47:27 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/404.php on line 10
+[01-Jun-2019 15:33:55 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/archive.php on line 19
+[01-Jun-2019 23:23:49 America/New_York] PHP Fatal error:  Call to undefined function the_id() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/content-link.php on line 13
+[03-Jun-2019 11:56:38 America/New_York] PHP Fatal error:  Call to undefined function _e() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/author-bio.php on line 12
+[05-Jun-2019 13:49:48 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/index.php on line 17
+[05-Jun-2019 21:08:54 America/New_York] PHP Fatal error:  Call to undefined function the_id() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/content.php on line 13
+[07-Jun-2019 02:53:09 America/New_York] PHP Fatal error:  Call to undefined function get_header() in /home/emmaqgwu/public_html/wp-content/themes/twentyfifteen/404.php on line 10

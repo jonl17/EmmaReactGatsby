@@ -1,0 +1,27 @@
+/*
+Theme Name: Lay Theme
+Theme URI: http://laytheme.com/
+Author: Armin Unruh
+Author URI: http://arminunruh.com/
+Description: Create a Portfolio Website with Lay Theme. Design layouts in a configurable grid where you place images, texts and videos.
+Text Domain: laytheme
+Version: 2.6.1
+*/
+
+/* Don't edit above!  */
+
+body[data-type="page"][data-id="130"] nav{
+    display: none !important;
+}
+body[data-type="page"] .menu-item-203 {
+    display: none !important;
+}
+body[data-type="project"] .menu-item-179 {
+    display: none !important;
+}
+#verkefni-back-btn {
+    transform: rotate(90deg);
+}
+#verkefni-back-btn img {
+    width: 75px;
+}

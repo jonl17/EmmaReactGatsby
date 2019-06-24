@@ -1,0 +1,387 @@
+@font-face {
+	font-family: Balkan;
+	src: url(assets/fonts/balkan.otf);
+	font-weight: normal;
+}
+
+* {
+    font-family: Balkan;
+}
+
+html, body {
+    height:100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+ }
+
+ table {
+     margin: auto;
+     margin-top: 7.5%;
+     width: 635px;
+ }
+
+.the_cv_container {
+    margin: auto;
+    margin-top: 5%;
+    margin-left: 25%;
+    width: 800px;
+}
+
+.the_info_container {
+    margin: auto;
+    margin-top: 5%;
+    width: 635px;
+}
+
+.the_info_container img {
+	height: 100%;
+	width: 100%;
+}
+
+.the_news_container {
+    margin: auto;
+    margin-top: 5%;
+    width: 635px;
+}
+
+.the_news_container img {
+    height: 100%;
+	width: 100%;
+    margin-bottom: 30px;
+}
+
+#the_cv p{
+    color: grey;
+    margin: 0;
+    padding: 0;
+}
+
+table tr {
+    vertical-align: middle;
+    text-align: center;
+    width: 600px;
+ }
+
+ table td {
+     padding: 5px;
+ }
+
+header {
+    padding: 1em;
+    color: black;
+    background-color: white;
+    clear: left;
+    margin-top: 4%;
+    margin-left: 4%;
+    width: 85%;
+    display: inline-block;
+}
+
+#header_nav p {
+    margin-bottom: 0;
+}
+
+footer {
+    color: black;
+    background-color: white;
+    clear: right;
+    margin-top: 4%;
+    width: 100%;
+    display: inline-block;
+    bottom: 0;
+    font-size: 10px;
+}
+
+footer #copyright {
+    position: fixed;
+    bottom: 0;
+    margin: auto;
+    margin-bottom: 3px;
+    color: lightslategrey;
+    right: 3px;
+    font-size: 12.5px;
+}
+
+footer #webmaster{
+    position: fixed;
+    bottom: 0;
+    margin: auto;
+    margin-bottom: 3px;
+    color: lightslategrey;
+    left: 3px;
+    display: none;
+    font-size: 12.5px;
+}
+footer #JGL{
+    font-size: 12.5px;
+}
+
+#webmaster:hover {
+    cursor: pointer;
+    color: pink;
+}
+
+#JGL:hover {
+    color: pink;
+}
+
+footer #JGL{
+    position: fixed;
+    bottom: 0;
+    margin: auto;
+    margin-bottom: 3px;
+    color: lightslategrey;
+    left: 3px;
+    text-decoration: none;
+}
+
+#menu-main-menu{
+    list-style-type: none;
+    width: 90%;
+    padding: 0;
+    position: absolute;
+    top: 17%;
+}
+
+#menu-main-menu a, li {
+    display: inline-block;
+    color: grey;
+    margin-right: 2%;
+}
+
+#menu-main-menu li:hover {
+    position: relative;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#name {
+    position: absolute;
+    font-size: 25px;
+    width: 90%;
+    top: 10%;
+}
+#name:hover {
+    cursor: pointer;
+}
+
+#name a {
+	color: black;
+}
+#name a:hover {
+	text-decoration: none;
+}
+
+td img {
+    height: 150px;
+    width: 150px;
+}
+
+.front_pic_text {
+    font-size: 21px;
+    font-weight: bold;
+    position: absolute;
+    color: black;
+    background-color:rgba(255, 255, 255, 0.548);
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.front_pic_text:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#info_img {
+    height: 400px;
+    border-radius: 2.5px;
+    transform: scaleX(-1);
+}
+#info_text {
+    position: relative;
+}
+
+#text_container a {
+    color: lightskyblue;
+}
+
+#text_container {
+    width: 100%;
+}
+
+#return {
+    bottom: 0;
+    margin-left: 49%;
+    margin-bottom: 3px;
+    height: 30px;
+    opacity: 0.8;
+}
+
+#prev {
+    position: fixed;
+    bottom: 50%;
+    left: 0;
+    margin: auto;
+    margin-bottom: 3px;
+    height: 25px;
+    opacity: 0.8;
+}
+#prev:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+#next {
+    position: fixed;
+    bottom: 50%;
+    right: 0;
+    margin: auto;
+    margin-bottom: 3px;
+    opacity: 0.8;
+}
+#next:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#next img, #prev img {
+	height: 25px;
+}
+
+#return:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.the_cv_container a {
+    color: lightskyblue;
+}
+
+.the_cv_container a:hover {
+    color: lightskyblue;
+}
+
+#vertical_poster {
+    height: 320px;
+    width: 650px;
+}
+
+#exhibition_title {
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.the_exhibition_container {
+    margin: auto;
+    margin-top: 5%;
+    width: 635px;
+}
+
+.exhibition_titles {
+    color: black;
+    font-weight: 600;
+}
+
+.exhibition-text {
+	opacity: 0.7;
+}
+
+.exhibition-img-container img {
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+}
+
+.sub-menu {
+    position: absolute;
+	padding: 0;
+	display: none;
+}
+
+.sub-menu > li {
+    min-width: 45px;
+    display: block;
+    white-space: nowrap;
+    font-size: 13.5px;
+}
+
+.sub-menu > li:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.sub-menu > li > a {
+    color: grey;
+}
+
+.sub-menu > li > a:hover {
+    text-decoration: none;
+}
+
+#list_span {
+    display: inline-block;
+    margin-right: 2%;
+}
+
+.works:hover {
+    cursor: pointer;
+}
+
+.wp-caption {
+	width: 100% !important;
+}
+.wp-caption p {
+	opacity: 0.7;
+}
+
+#text_container p {
+	opacity: 0.7;
+}
+
+/* enquire form style */
+
+.enquire-form-container {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    /* should be hidden as default */
+    display: none;
+}
+.enquire-form {
+    margin: auto !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    padding: 2.5% !important;
+}
+.enquire-form-container > h1 {
+    position: fixed;
+    top: 10%;
+    right: 10%;
+}
+.enquire-form-container > h1:hover {
+    cursor: pointer;
+}
+.hide-form {
+    display: none;
+}
+#enquire-btn {
+    padding-top: 5%;
+    text-align: right;
+    opacity: 0.7;
+}
+#enquire-btn > p:hover {
+    cursor: pointer;
+}
+#enquire-btn > p {
+    display: inline;
+}
+
