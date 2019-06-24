@@ -17,7 +17,7 @@ const NextButton = ({ works, nextWorkIndex, dispatch }) => {
       to={"/" + works[nextWorkIndex].node.slug}
     >
       <p style={{ color: "black" }}>
-        Next work: {works[nextWorkIndex].node.title}
+        Next work: {works[nextWorkIndex].node.title.replace("#038;", "")}
       </p>
     </Button>
   )
