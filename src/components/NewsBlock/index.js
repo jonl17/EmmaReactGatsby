@@ -18,12 +18,12 @@ export const BlockStyled = styled.div`
   ${props =>
     props.device === `mobileL` &&
     css`
-      padding-bottom: 10px;
+      padding-bottom: 25px;
     `}
   ${props =>
     props.device === `mobileS` &&
     css`
-      padding-bottom: 5px;
+      padding-bottom: 25px;
     `}
 `
 

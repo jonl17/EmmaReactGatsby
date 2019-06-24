@@ -3,6 +3,7 @@ import React from "react"
 import Block from "../NewsBlock"
 import Img from "gatsby-image"
 import ExitBtn from "../ExitButton"
+import NextBtn from "../NextButton"
 
 import { connect } from "react-redux"
 
@@ -20,7 +21,7 @@ const Container = ({ artwork, device }) => {
     <ContainerStyled>
       <ExitBtn></ExitBtn>
       <TitleContainer device={device}>
-        <Title>{artwork.title}</Title>
+        <Title>{artwork.title.replace("#038;", "")}</Title>
         <Year device={device}>{year}</Year>
       </TitleContainer>
       <DescriptionBox>
@@ -39,6 +40,7 @@ const Container = ({ artwork, device }) => {
           {item.mynd.undirtexti ? <p>{item.mynd.texti}</p> : ""}
         </Block>
       ))}
+      <NextBtn></NextBtn>
     </ContainerStyled>
   )
 }

@@ -66,7 +66,9 @@ class MenuItem extends React.Component {
         >
           {this.props.works.map((item, index) => (
             <DropDownMenuItem key={index} to={item.node.slug}>
-              <DropDownText>{item.node.title}</DropDownText>
+              <DropDownText>
+                {item.node.title.replace("#038;", "")}
+              </DropDownText>
             </DropDownMenuItem>
           ))}
         </div>

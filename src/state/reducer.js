@@ -1,7 +1,16 @@
-import { GET_WORKS, SET_SCREEN_SIZE } from "./actions"
+import {
+  GET_WORKS,
+  SET_SCREEN_SIZE,
+  SET_CURRENT_WORK,
+  SET_CURRENT_WORK_INDEX,
+} from "./actions"
 
 const initialState = {
   works: [],
+  currentWork: {} /* slug */,
+  currentWorkIndex: 0,
+  nextWork: {},
+  nextWorkIndex: 0,
   windowWidth: 0,
   device: `browser`,
 }
@@ -25,6 +34,18 @@ export default (state = initialState, action) => {
         device = `mobileS`
       }
       return { ...state, windowWidth: action.width, device: device }
+    case SET_CURRENT_WORK:
+      return { ...state, currentWork: action.work }
+    case SET_CURRENT_WORK_INDEX:
+      if (action.index === state.works.length - 1) {
+        return { ...state, currentWorkIndex: action.index, nextWorkIndex: 0 }
+      } else {
+        return {
+          ...state,
+          currentWorkIndex: action.index,
+          nextWorkIndex: action.index + 1,
+        }
+      }
     default:
       return state
   }

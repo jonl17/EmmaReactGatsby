@@ -53,7 +53,9 @@ export const Year = styled.h2`
       text-align: left;
     `}
 `
-export const Title = styled.h1``
+export const Title = styled.h1`
+  margin: 0;
+`
 
 export const DescriptionBox = styled.div`
   padding-top: 25px;

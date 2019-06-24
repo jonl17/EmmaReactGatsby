@@ -2,13 +2,14 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Wrap from "../components/Wrap"
 import { Grid } from "../components/Grid"
+import TextBox from "../components/FrontBoxText"
 import Img from "gatsby-image"
 import Header from "../components/Header"
 import { GlobalStyles } from "../components/GlobalStyles.js"
 import { connect } from "react-redux"
+import { setCurrentWorkIndex } from "../state/actions"
 
-const index = ({ data, device }) => {
-  console.log(device)
+const index = ({ data, device, dispatch }) => {
   return (
     <>
       <GlobalStyles></GlobalStyles>
@@ -16,13 +17,22 @@ const index = ({ data, device }) => {
       <Wrap artworks={data.allWordpressWpWorks.edges}>
         <Grid device={device}>
           {data.allWordpressWpWorks.edges.map((item, index) => (
-            <Link key={index} to={"/" + item.node.slug}>
+            <Link
+              style={{
+                position: "relative",
+                display: "grid",
+              }} /* doing this inline so titles stick inside boxes */
+              key={index}
+              to={"/" + item.node.slug}
+              onClick={() => dispatch(setCurrentWorkIndex(index))}
+            >
               <Img
                 key={index}
                 fluid={
                   item.node.acf.frontpage_image.localFile.childImageSharp.fluid
                 }
               ></Img>
+              <TextBox> {item.node.title.replace("#038;", "")}</TextBox>
             </Link>
           ))}
         </Grid>
