@@ -19,6 +19,7 @@
     "gatsby-plugin-sharp": "^2.1.9",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-source-filesystem": "^2.0.43",
+    "gatsby-source-sanity": "^4.0.4",
     "gatsby-source-wordpress": "^3.0.69",
     "gatsby-transformer-sharp": "^2.1.21",
     "react": "^16.8.6",
