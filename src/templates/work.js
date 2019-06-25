@@ -7,7 +7,6 @@ import { GlobalStyles } from "../components/GlobalStyles.js"
 import Container from "../components/WorksContainer"
 
 const WorkTemplate = ({ data, device }) => {
-  console.log(data.wordpressWpWorks)
   return (
     <>
       <GlobalStyles />

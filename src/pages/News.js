@@ -11,7 +11,6 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const News = ({ data, device }) => {
-  console.log(data.wordpressPage)
   return (
     <>
       <GlobalStyles></GlobalStyles>
@@ -23,9 +22,15 @@ const News = ({ data, device }) => {
             .reverse()
             .map((item, index) => (
               <Block key={index}>
-                <Img
-                  fluid={item.ein_faersla.mynd.localFile.childImageSharp.fluid}
-                ></Img>
+                {item.ein_faersla.mynd === null ? (
+                  ""
+                ) : (
+                  <Img
+                    fluid={
+                      item.ein_faersla.mynd.localFile.childImageSharp.fluid
+                    }
+                  ></Img>
+                )}
                 {item.ein_faersla ? (
                   <Text href={item.ein_faersla.the_link.slod}>
                     {item.ein_faersla.the_link.texti}

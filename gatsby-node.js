@@ -9,7 +9,6 @@ sharp.simd(true)
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-
   return new Promise((resolve, reject) => {
     const workTemplate = path.resolve(`src/templates/work.js`)
     // Query for markdown nodes to use in creating pages.
@@ -31,9 +30,9 @@ exports.createPages = ({ graphql, actions }) => {
           console.log("error")
           reject(result.errors)
         }
-
         // Create pages for each work.
         result.data.allWordpressWpWorks.edges.forEach(({ node }) => {
+          console.log(node.slug)
           const path = node.slug
           createPage({
             path,

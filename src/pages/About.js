@@ -13,14 +13,14 @@ const About = ({ data }) => {
   const { fluid } = featured_media.localFile.childImageSharp
   return (
     <>
-      <GlobalStyles></GlobalStyles>
-      <Header metadata={data.site.siteMetadata}></Header>
+      <GlobalStyles />
+      <Header metadata={data.site.siteMetadata} />
       <Wrap>
         <PageWrap>
           <p>{birth}</p>
           <p>{lives}</p>
           <p>{about}</p>
-          <Img fluid={fluid}></Img>
+          {featured_media === null ? "" : <Img fluid={fluid} />}
         </PageWrap>
       </Wrap>
     </>
