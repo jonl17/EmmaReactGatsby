@@ -8,11 +8,13 @@ import Header from "../components/Header"
 import { GlobalStyles } from "../components/GlobalStyles.js"
 import { connect } from "react-redux"
 import { setCurrentWorkIndex } from "../state/actions"
+import SEO from "../components/SEO"
 
 const index = ({ data, device, dispatch }) => {
   return (
     <>
       <GlobalStyles></GlobalStyles>
+      <SEO></SEO>
       <Header metadata={data.site.siteMetadata}></Header>
       <Wrap artworks={data.allWordpressWpWorks.edges}>
         <Grid device={device}>

@@ -3,17 +3,18 @@ import Header from "../components/Header"
 import Wrap from "../components/Wrap"
 import { NewsGrid } from "../components/Grid"
 import Block from "../components/NewsBlock"
-import { Text } from "../components/Text"
 
 import { connect } from "react-redux"
 import { GlobalStyles } from "../components/GlobalStyles.js/index.js"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import SEO from "../components/SEO"
 
 const News = ({ data, device }) => {
   return (
     <>
       <GlobalStyles></GlobalStyles>
+      <SEO></SEO>
       <Header metadata={data.site.siteMetadata}></Header>
       <Wrap>
         <NewsGrid device={device}>
@@ -31,13 +32,13 @@ const News = ({ data, device }) => {
                     }
                   ></Img>
                 )}
-                {item.ein_faersla ? (
+                {/* {item.ein_faersla ? (
                   <Text href={item.ein_faersla.the_link.slod}>
                     {item.ein_faersla.the_link.texti}
                   </Text>
                 ) : (
                   ""
-                )}
+                )} */}
               </Block>
             ))}
         </NewsGrid>

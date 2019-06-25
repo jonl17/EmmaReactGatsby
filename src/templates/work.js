@@ -5,11 +5,13 @@ import { NewsGrid } from "../components/Grid"
 import { connect } from "react-redux"
 import { GlobalStyles } from "../components/GlobalStyles.js"
 import Container from "../components/WorksContainer"
+import SEO from "../components/SEO"
 
 const WorkTemplate = ({ data, device }) => {
   return (
     <>
       <GlobalStyles />
+      <SEO></SEO>
       <Wrap>
         <NewsGrid device={device}>
           <Container artwork={data.wordpressWpWorks} />

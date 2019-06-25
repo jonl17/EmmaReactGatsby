@@ -3,6 +3,7 @@ import Header from "../components/Header"
 import Wrap from "../components/Wrap"
 import PageWrap from "../components/PageWrap"
 import { Block, Title, Item } from "../components/CVblock"
+import SEO from "../components/SEO"
 
 import { GlobalStyles } from "../components/GlobalStyles.js"
 import { graphql } from "gatsby"
@@ -11,6 +12,7 @@ const CV = ({ data }) => {
   return (
     <>
       <GlobalStyles></GlobalStyles>
+      <SEO></SEO>
       <Header metadata={data.site.siteMetadata}></Header>
       <Wrap>
         <PageWrap>

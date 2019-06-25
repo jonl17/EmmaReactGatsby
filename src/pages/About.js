@@ -7,6 +7,8 @@ import { GlobalStyles } from "../components/GlobalStyles.js/index.js"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
+import SEO from "../components/SEO"
+
 const About = ({ data }) => {
   const { acf, featured_media } = data.wordpressPage
   const { about, birth, lives } = acf
@@ -14,6 +16,7 @@ const About = ({ data }) => {
   return (
     <>
       <GlobalStyles />
+      <SEO></SEO>
       <Header metadata={data.site.siteMetadata} />
       <Wrap>
         <PageWrap>

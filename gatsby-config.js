@@ -7,6 +7,9 @@
 module.exports = {
   siteMetadata: {
     title: `Emma Heiðarsdóttir`,
+    description: `Emma Heiðarsdóttir is a visual artist from Reykjavík, Iceland.`,
+    url: `https://www.emmaheidarsdottir.info`,
+    favicon: `/static/icon.png`,
     menuItems: [`Works`, `About`, `CV`, `News`],
   },
   plugins: [
