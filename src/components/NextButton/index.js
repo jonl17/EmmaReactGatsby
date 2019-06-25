@@ -11,7 +11,9 @@ const Button = styled(Link)`
 `
 
 const NextButton = ({ works, nextWorkIndex, dispatch }) => {
-  console.log(works)
+  if (works[nextWorkIndex] === undefined) {
+    return <p>its null mate</p>
+  }
   return (
     <Button
       onClick={() => dispatch(setCurrentWorkIndex(nextWorkIndex))}
