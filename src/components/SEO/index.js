@@ -2,9 +2,8 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 import favicon from "../../../static/icon.png"
-import { fcall } from "q"
 
-const SEO = ({}) => (
+const SEO = () => (
   <StaticQuery
     query={graphql`
       query SEO {
