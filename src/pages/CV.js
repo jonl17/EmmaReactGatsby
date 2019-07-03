@@ -8,17 +8,24 @@ import SEO from "../components/SEO"
 import { GlobalStyles } from "../components/GlobalStyles"
 import { graphql } from "gatsby"
 
-const CV = ({ data }) => {
+const CV = ({
+  data: {
+    site: { siteMetadata },
+    wordpressPage: {
+      acf: { education, upcoming_exhibitions, exhibitions, other },
+    },
+  },
+}) => {
   return (
     <>
       <GlobalStyles></GlobalStyles>
       <SEO></SEO>
-      <Header metadata={data.site.siteMetadata}></Header>
+      <Header metadata={siteMetadata}></Header>
       <Wrap>
         <PageWrap>
           <Block>
             <Title>Education</Title>
-            {data.wordpressPage.acf.education
+            {education
               .slice(0)
               .reverse()
               .map((item, index) => (
@@ -27,7 +34,7 @@ const CV = ({ data }) => {
           </Block>
           <Block>
             <Title>Upcoming Exhibitions</Title>
-            {data.wordpressPage.acf.upcoming_exhibitions
+            {upcoming_exhibitions
               .slice(0)
               .reverse()
               .map((item, index) => (
@@ -38,7 +45,7 @@ const CV = ({ data }) => {
           </Block>
           <Block>
             <Title>Exhibitions</Title>
-            {data.wordpressPage.acf.exhibitions
+            {exhibitions
               .slice(0)
               .reverse()
               .map((item, index) => (
@@ -47,7 +54,7 @@ const CV = ({ data }) => {
           </Block>
           <Block>
             <Title>Other</Title>
-            {data.wordpressPage.acf.other
+            {other
               .slice(0)
               .reverse()
               .map((item, index) => (

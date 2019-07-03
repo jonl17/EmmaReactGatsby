@@ -7,14 +7,14 @@ import { GlobalStyles } from "../components/GlobalStyles"
 import Container from "../components/WorksContainer"
 import SEO from "../components/SEO"
 
-const WorkTemplate = ({ data, device }) => {
+const WorkTemplate = ({ data: { wordpressWpWorks }, device }) => {
   return (
     <>
       <GlobalStyles />
       <SEO></SEO>
       <Wrap>
         <NewsGrid device={device}>
-          <Container artwork={data.wordpressWpWorks} />
+          <Container artwork={wordpressWpWorks} />
         </NewsGrid>
       </Wrap>
     </>
