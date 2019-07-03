@@ -3,7 +3,7 @@ import Header from "../components/Header"
 import Wrap from "../components/Wrap"
 import PageWrap from "../components/PageWrap"
 
-import { GlobalStyles } from "../components/GlobalStyles.js/index.js"
+import { GlobalStyles } from "../components/GlobalStyles"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 

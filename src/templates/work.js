@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Wrap from "../components/Wrap"
 import { NewsGrid } from "../components/Grid"
 import { connect } from "react-redux"
-import { GlobalStyles } from "../components/GlobalStyles.js"
+import { GlobalStyles } from "../components/GlobalStyles"
 import Container from "../components/WorksContainer"
 import SEO from "../components/SEO"
 

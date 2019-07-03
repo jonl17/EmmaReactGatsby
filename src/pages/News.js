@@ -5,7 +5,7 @@ import { NewsGrid } from "../components/Grid"
 import Block from "../components/NewsBlock"
 
 import { connect } from "react-redux"
-import { GlobalStyles } from "../components/GlobalStyles.js/index.js"
+import { GlobalStyles } from "../components/GlobalStyles"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import SEO from "../components/SEO"

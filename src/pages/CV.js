@@ -5,7 +5,7 @@ import PageWrap from "../components/PageWrap"
 import { Block, Title, Item } from "../components/CVblock"
 import SEO from "../components/SEO"
 
-import { GlobalStyles } from "../components/GlobalStyles.js"
+import { GlobalStyles } from "../components/GlobalStyles"
 import { graphql } from "gatsby"
 
 const CV = ({ data }) => {
