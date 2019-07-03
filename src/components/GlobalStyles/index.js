@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 import Balkan from "./Balkan.otf"
+import Cursor from "../../../static/cursor-normal.png"
 
 export const GlobalStyles = createGlobalStyle`
     @font-face {
@@ -12,6 +13,7 @@ export const GlobalStyles = createGlobalStyle`
     }
     html, body {
         margin: 0;
+        cursor: url(${Cursor}) 17.5 17.5,auto;
     }
     p {
         color: gray;
