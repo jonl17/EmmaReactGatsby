@@ -30,6 +30,8 @@ export const query = graphql`
         description
         material
         year
+        videowork
+        video
         myndir {
           mynd {
             undirtexti

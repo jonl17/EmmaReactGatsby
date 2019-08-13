@@ -32,7 +32,6 @@ exports.createPages = ({ graphql, actions }) => {
         }
         // Create pages for each work.
         result.data.allWordpressWpWorks.edges.forEach(({ node }) => {
-          console.log(node.slug)
           const path = node.slug
           createPage({
             path,
