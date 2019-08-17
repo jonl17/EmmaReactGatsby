@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "emma-portfolio",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Emma Heiðarsdóttir Visual Artist Portfolio Site",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
