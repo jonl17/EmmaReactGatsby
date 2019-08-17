@@ -12,7 +12,7 @@ const CV = ({
   data: {
     site: { siteMetadata },
     wordpressPage: {
-      acf: { education, upcoming_exhibitions, exhibitions, other },
+      acf: { education, exhibitions, other },
     },
   },
 }) => {
@@ -32,7 +32,7 @@ const CV = ({
                 <Item key={index}>{item.one_education}</Item>
               ))}
           </Block>
-          <Block>
+          {/* <Block>
             <Title>Upcoming Exhibitions</Title>
             {upcoming_exhibitions
               .slice(0)
@@ -42,7 +42,7 @@ const CV = ({
                   {item.one_upcoming_exhibition}
                 </Item>
               ))}
-          </Block>
+          </Block> */}
           <Block>
             <Title>Exhibitions</Title>
             {exhibitions
@@ -86,9 +86,6 @@ export const query = graphql`
         }
         other {
           one_other
-        }
-        upcoming_exhibitions {
-          one_upcoming_exhibition
         }
       }
     }

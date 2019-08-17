@@ -31,7 +31,6 @@ export const query = graphql`
         material
         year
         videowork
-        video
         myndir {
           mynd {
             undirtexti

@@ -16,7 +16,7 @@ import {
 } from "./Styled"
 
 const Container = ({ artwork, device }) => {
-  const { description, myndir, material, year, videowork, video } = artwork.acf
+  const { description, myndir, material, year } = artwork.acf
   console.log(artwork)
   return (
     <ContainerStyled>
@@ -29,20 +29,18 @@ const Container = ({ artwork, device }) => {
         <p>{description}</p>
         <p>{material}</p>
       </DescriptionBox>
-      {!videowork
-        ? myndir.map((item, index) => (
-            <Block key={index}>
-              {item.mynd.myndaskra === null ? (
-                ""
-              ) : (
-                <Img
-                  fluid={item.mynd.myndaskra.localFile.childImageSharp.fluid}
-                ></Img>
-              )}
-              {item.mynd.undirtexti ? <p>{item.mynd.texti}</p> : ""}
-            </Block>
-          ))
-        : video}
+      {myndir.map((item, index) => (
+        <Block key={index}>
+          {item.mynd.myndaskra === null ? (
+            ""
+          ) : (
+            <Img
+              fluid={item.mynd.myndaskra.localFile.childImageSharp.fluid}
+            ></Img>
+          )}
+          {item.mynd.undirtexti ? <p>{item.mynd.texti}</p> : ""}
+        </Block>
+      ))}
       <NextBtn></NextBtn>
     </ContainerStyled>
   )
