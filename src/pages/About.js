@@ -5,14 +5,12 @@ import PageWrap from "../components/PageWrap"
 
 import { GlobalStyles } from "../components/GlobalStyles"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 
 import SEO from "../components/SEO"
 
 const About = ({ data }) => {
-  const { acf, featured_media } = data.wordpressPage
+  const { acf } = data.wordpressPage
   const { about, birth, lives } = acf
-  const { fluid } = featured_media.localFile.childImageSharp
   return (
     <>
       <GlobalStyles />
@@ -23,7 +21,6 @@ const About = ({ data }) => {
           <p>{birth}</p>
           <p>{lives}</p>
           <p>{about}</p>
-          {featured_media === null ? "" : <Img fluid={fluid} />}
         </PageWrap>
       </Wrap>
     </>
@@ -38,15 +35,6 @@ export const query = graphql`
         about
         birth
         lives
-      }
-      featured_media {
-        localFile {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
       }
     }
     site {
