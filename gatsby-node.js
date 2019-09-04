@@ -11,6 +11,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return new Promise((resolve, reject) => {
     const workTemplate = path.resolve(`src/templates/work.js`)
+    const videoWorkTemplate = path.resolve(`src/templates/videoWork.js`)
     // Query for markdown nodes to use in creating pages.
     resolve(
       graphql(
@@ -20,6 +21,9 @@ exports.createPages = ({ graphql, actions }) => {
               edges {
                 node {
                   slug
+                  acf {
+                    videowork
+                  }
                 }
               }
             }
@@ -33,15 +37,23 @@ exports.createPages = ({ graphql, actions }) => {
         // Create pages for each work.
         result.data.allWordpressWpWorks.edges.forEach(({ node }) => {
           const path = node.slug
-          createPage({
-            path,
-            component: workTemplate,
-            // In your blog post template's graphql query, you can use path
-            // as a GraphQL variable to query for data from the markdown file.
-            context: {
-              slug: path,
-            },
-          })
+          if (node.acf.videowork) {
+            createPage({
+              path,
+              component: videoWorkTemplate,
+              context: {
+                slug: path,
+              },
+            })
+          } else {
+            createPage({
+              path,
+              component: workTemplate,
+              context: {
+                slug: path,
+              },
+            })
+          }
         })
       })
     )
