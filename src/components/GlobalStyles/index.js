@@ -18,4 +18,7 @@ export const GlobalStyles = createGlobalStyle`
         color: gray;
         line-height: 1.6;
     }
+    ::selection {
+        color: gold;
+    }
 `

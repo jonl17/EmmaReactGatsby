@@ -15,14 +15,6 @@ const VideoWorkTemplate = ({ data: { wordpressWpWorks: works }, device }) => {
       <Wrap>
         <NewsGrid device={device}>
           <VideoContainer artwork={works}>
-            <iframe
-              src={works.acf.video}
-              width="640"
-              height="360"
-              frameborder="0"
-              allow="autoplay; fullscreen"
-              allowfullscreen
-            ></iframe>
           </VideoContainer>
         </NewsGrid>
       </Wrap>

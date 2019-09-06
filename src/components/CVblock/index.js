@@ -9,12 +9,12 @@ export const Title = styled.p`
   margin-bottom: 0;
 `
 
-const greenShine = keyframes`
+const goldShine = keyframes`
   from {
     color: gray;
   }
   to {
-    color: lightgreen;
+    color: gold;
   }
 `
 export const Item = styled.p`
@@ -22,6 +22,6 @@ export const Item = styled.p`
   ${props =>
     props.upcoming === true &&
     css`
-      animation: ${greenShine} 2s infinite alternate;
+      animation: ${goldShine} 1s infinite alternate;
     `}
 `
