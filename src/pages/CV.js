@@ -16,6 +16,7 @@ const CV = ({
     },
   },
 }) => {
+  console.log(upcoming_exhibitions)
   return (
     <>
       <GlobalStyles></GlobalStyles>
@@ -32,9 +33,9 @@ const CV = ({
                 <Item key={index}>{item.one_education}</Item>
               ))}
           </Block>
-           <Block>
-            <Title>Upcoming Exhibitions</Title>
-            {upcoming_exhibitions[0].one_upcoming_exhibition != null ? upcoming_exhibitions
+          <Block>
+            {upcoming_exhibitions[0].one_upcoming_exhibition !== "null" ? <Title>Upcoming Exhibitions</Title> : <></>}
+            {upcoming_exhibitions[0].one_upcoming_exhibition !== "null" ? upcoming_exhibitions
               .slice(0)
               .reverse()
               .map((item, index) => (

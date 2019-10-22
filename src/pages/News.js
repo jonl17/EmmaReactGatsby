@@ -26,12 +26,12 @@ const News = ({ data, device }) => {
                 {item.ein_faersla.mynd === null ? (
                   ""
                 ) : (
-                  <Img
-                    fluid={
-                      item.ein_faersla.mynd.localFile.childImageSharp.fluid
-                    }
-                  ></Img>
-                )}
+                    <Img
+                      fluid={
+                        item.ein_faersla.mynd.localFile.childImageSharp.fluid
+                      }
+                    ></Img>
+                  )}
                 {/* {item.ein_faersla ? (
                   <Text href={item.ein_faersla.the_link.slod}>
                     {item.ein_faersla.the_link.texti}
