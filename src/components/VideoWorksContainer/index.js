@@ -18,7 +18,7 @@ import { Container, Video } from "./Styled"
 const VideoContainer = ({ artwork, device }) => {
   const { description, video, material, year } = artwork.acf
   return (
-    <ContainerStyled>
+    <ContainerStyled device={device}>
       <ExitBtn></ExitBtn>
       <TitleContainer device={device}>
         <Title>{artwork.title.replace("#038;", "")}</Title>

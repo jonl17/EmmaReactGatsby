@@ -4,9 +4,9 @@ export const getWorks = works => ({
   works,
 })
 
-export const SET_SCREEN_SIZE = "SET_SCREEN_SIZE"
-export const setScreenSize = width => ({
-  type: SET_SCREEN_SIZE,
+export const SET_DEVICE = "SET_DEVICE"
+export const setDevice = width => ({
+  type: SET_DEVICE,
   width,
 })
 
@@ -20,4 +20,10 @@ export const SET_CURRENT_WORK_INDEX = "SET_CURRENT_WORK_INDEX"
 export const setCurrentWorkIndex = index => ({
   type: SET_CURRENT_WORK_INDEX,
   index,
+})
+
+export const SET_PAGENAME_PREFIX = "SET_PAGENAME_PREFIX"
+export const setPagenamePrefix = prefix => ({
+  type: SET_PAGENAME_PREFIX,
+  prefix,
 })

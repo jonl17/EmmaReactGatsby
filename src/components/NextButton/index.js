@@ -1,34 +1,53 @@
 import React from "react"
-import { connect } from "react-redux"
-import { Link } from "gatsby"
+import { useSelector, useDispatch } from "react-redux"
 import { setCurrentWorkIndex } from "../../state/actions"
+import { graphql, StaticQuery } from "gatsby"
 
-import styled from "styled-components"
+/** components */
+import { Button, Text } from "./Styled"
 
-const Button = styled(Link)`
-  text-decoration: none;
-  text-align: right;
-`
-
-const NextButton = ({ works, nextWorkIndex, dispatch }) => {
+const NextButton = ({
+  data: {
+    allWordpressWpWorks: { edges: works },
+  },
+}) => {
+  const nextWorkIndex = useSelector(state => state.reducer.nextWorkIndex)
+  const dispatch = useDispatch()
+  if (nextWorkIndex === works.length) {
+    dispatch(setCurrentWorkIndex(0))
+  }
   if (works[nextWorkIndex] === undefined) {
-    return <p>its null mate</p>
+    return <p>""</p>
   }
   return (
     <Button
-      onClick={() => dispatch(setCurrentWorkIndex(nextWorkIndex))}
-      to={"/" + works[nextWorkIndex].node.slug}
+      onClick={() => {
+        dispatch(setCurrentWorkIndex(nextWorkIndex))
+      }}
+      to={"/Works/" + works[nextWorkIndex].node.slug}
     >
-      <p style={{ color: "black" }}>
+      <Text>
         Next work: {works[nextWorkIndex].node.title.replace("#038;", "")}
-      </p>
+      </Text>
     </Button>
   )
 }
 
-const mapStateToProps = state => ({
-  works: state.reducer.works,
-  nextWorkIndex: state.reducer.nextWorkIndex,
-})
-
-export default connect(mapStateToProps)(NextButton)
+export default props => (
+  <StaticQuery
+    query={graphql`
+      {
+        allWordpressWpWorks(sort: { fields: date, order: DESC }) {
+          edges {
+            node {
+              date
+              title
+              slug
+            }
+          }
+        }
+      }
+    `}
+    render={data => <NextButton data={data} {...props}></NextButton>}
+  ></StaticQuery>
+)

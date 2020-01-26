@@ -4,29 +4,16 @@ export const NewsGrid = styled.div`
   display: grid;
   grid-gap: 75px;
   width: 100%;
+  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+  margin: auto;
+  box-sizing: border-box;
+  max-width: 750px;
+  padding-top: 50px;
   ${props =>
-    props.device === `browser` &&
+    props.device === `mobile` &&
     css`
-      padding: 25px;
-      grid-template-columns: repeat(1, 800px);
-    `}
-  ${props =>
-    props.device === `tablet` &&
-    css`
-      padding: 25px 0 25px 0;
-      grid-template-columns: repeat(1, 600px);
-    `}
-  ${props =>
-    props.device === `mobileL` &&
-    css`
-      padding: 25px 0 25px 0;
-      grid-template-columns: repeat(1, 400px);
-    `}
-  ${props =>
-    props.device === `mobileS` &&
-    css`
-      padding: 25px 0 25px 0;
-      grid-template-columns: repeat(1, 300px);
+      grid-gap: 10px;
+      padding-top: 0;
     `}
 `
 
@@ -35,29 +22,9 @@ export const Grid = styled.div`
   grid-gap: 10px;
   height: 100%;
   width: 100%;
-
-  ${props =>
-    props.device === `browser` &&
-    css`
-      padding: 25px;
-      grid-template-columns: repeat(5, 150px);
-    `}
-  ${props =>
-    props.device === `tablet` &&
-    css`
-      padding: 25px 0 25px 0;
-      grid-template-columns: repeat(4, 150px);
-    `}
-  ${props =>
-    props.device === `mobileL` &&
-    css`
-      padding: 25px 0 25px 0;
-      grid-template-columns: repeat(3, 150px);
-    `}
-  ${props =>
-    props.device === `mobileS` &&
-    css`
-      padding: 25px 0 25px 0;
-      grid-template-columns: repeat(2, 150px);
-    `}
+  max-width: 750px;
+  margin: auto;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  box-sizing: border-box;
+  padding: 25px;
 `

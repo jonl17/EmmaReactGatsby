@@ -1,8 +1,9 @@
 import {
   GET_WORKS,
-  SET_SCREEN_SIZE,
+  SET_DEVICE,
   SET_CURRENT_WORK,
   SET_CURRENT_WORK_INDEX,
+  SET_PAGENAME_PREFIX,
 } from "./actions"
 
 const initialState = {
@@ -13,27 +14,25 @@ const initialState = {
   nextWorkIndex: 0,
   windowWidth: 0,
   device: `browser`,
+  pagenamePrefix: ``,
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case GET_WORKS:
       return { ...state, works: action.works }
-    case SET_SCREEN_SIZE:
-      let device = ""
-      if (action.width > 950) {
-        device = `browser`
+    case SET_DEVICE:
+      let device
+      if (action.width <= 750) {
+        device = `mobile`
       }
-      if (action.width < 950 && action.width > 600) {
+      if (action.width > 750 && action.width <= 1050) {
         device = `tablet`
       }
-      if (action.width < 600) {
-        device = `mobileL`
+      if (action.width > 1050) {
+        device = `browser`
       }
-      if (action.width < 475) {
-        device = `mobileS`
-      }
-      return { ...state, windowWidth: action.width, device: device }
+      return { ...state, device: device }
     case SET_CURRENT_WORK:
       return { ...state, currentWork: action.work }
     case SET_CURRENT_WORK_INDEX:
@@ -46,6 +45,8 @@ export default (state = initialState, action) => {
           nextWorkIndex: action.index + 1,
         }
       }
+    case SET_PAGENAME_PREFIX:
+      return { ...state, pagenamePrefix: action.prefix }
     default:
       return state
   }

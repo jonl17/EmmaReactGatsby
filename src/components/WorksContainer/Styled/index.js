@@ -1,6 +1,15 @@
 import styled, { css } from "styled-components"
 
-export const ContainerStyled = styled.div``
+export const ContainerStyled = styled.div`
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      display: grid;
+      grid-gap: 15px;
+      box-sizing: border-box;
+      padding: 15px;
+    `}
+`
 
 export const TitleContainer = styled.div`
   display: grid;
@@ -15,14 +24,9 @@ export const TitleContainer = styled.div`
     css`
       grid-template-columns: auto 1fr;
     `}
+
   ${props =>
-    props.device === `mobileL` &&
-    css`
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
-    `}
-  ${props =>
-    props.device === `mobileS` &&
+    props.device === `mobile` &&
     css`
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr;
@@ -44,15 +48,11 @@ export const Year = styled.h2`
       text-align: right;
     `}
   ${props =>
-    props.device === `mobileL` &&
+    props.device === `mobile` &&
     css`
       text-align: left;
     `}
-  ${props =>
-    props.device === `mobileS` &&
-    css`
-      text-align: left;
-    `}
+
 `
 export const Title = styled.h1`
   margin: 0;

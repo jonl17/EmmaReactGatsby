@@ -1,22 +1,27 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Wrap from "../components/Wrap"
-import { NewsGrid } from "../components/Grid"
-import { connect } from "react-redux"
-import { GlobalStyles } from "../components/GlobalStyles"
-import Container from "../components/WorksContainer"
-import SEO from "../components/SEO"
+import { useSelector, useDispatch } from "react-redux"
+import { setPagenamePrefix } from "../state/actions"
 
-const WorkTemplate = ({ data: { wordpressWpWorks }, device }) => {
+/** components */
+import Container from "../components/WorksContainer"
+import { NewsGrid } from "../components/Grid"
+
+const setPagePrefix = (prefix, dispatch) => {
+  if (prefix.pagename !== undefined) {
+    dispatch(setPagenamePrefix(prefix.pagename + " | "))
+  }
+}
+
+const WorkTemplate = ({ pageContext, data: { wordpressWpWorks } }) => {
+  const device = useSelector(state => state.reducer.device)
+  const dispatch = useDispatch()
+  setPagePrefix(pageContext, dispatch)
   return (
     <>
-      <GlobalStyles />
-      <SEO></SEO>
-      <Wrap>
-        <NewsGrid device={device}>
-          <Container artwork={wordpressWpWorks} />
-        </NewsGrid>
-      </Wrap>
+      <NewsGrid device={device}>
+        <Container artwork={wordpressWpWorks} />
+      </NewsGrid>
     </>
   )
 }
@@ -51,8 +56,4 @@ export const query = graphql`
   }
 `
 
-const mapStateToProps = state => ({
-  device: state.reducer.device,
-})
-
-export default connect(mapStateToProps)(WorkTemplate)
+export default WorkTemplate

@@ -1,0 +1,7 @@
+@font-face {
+  font-family: Balkan;
+  src: url("./assets/Balkan.ttf");
+}
+* {
+  font-family: Balkan;
+}

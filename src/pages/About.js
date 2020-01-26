@@ -1,14 +1,9 @@
 import React from "react"
-import Header from "../components/Header"
-import Wrap from "../components/Wrap"
 import PageWrap from "../components/PageWrap"
 
-import styled from "styled-components";
+import styled from "styled-components"
 
-import { GlobalStyles } from "../components/GlobalStyles"
 import { graphql } from "gatsby"
-
-import SEO from "../components/SEO"
 
 const Contact = styled.div`
   margin-top: 50px;
@@ -23,20 +18,15 @@ const About = ({ data }) => {
   const { about, birth, lives, email } = acf
   return (
     <>
-      <GlobalStyles />
-      <SEO></SEO>
-      <Header metadata={data.site.siteMetadata} />
-      <Wrap>
-        <PageWrap>
-          <p>{birth}</p>
-          <p>{lives}</p>
-          <p>{about}</p>
-          <Contact>
-            <Text>Contact:</Text>
-            <Text>{email}</Text>
-          </Contact>
-        </PageWrap>
-      </Wrap>
+      <PageWrap>
+        <p>{birth}</p>
+        <p>{lives}</p>
+        <p>{about}</p>
+        <Contact>
+          <Text>Contact:</Text>
+          <Text>{email}</Text>
+        </Contact>
+      </PageWrap>
     </>
   )
 }
@@ -50,12 +40,6 @@ export const query = graphql`
         birth
         lives
         email
-      }
-    }
-    site {
-      siteMetadata {
-        title
-        menuItems
       }
     }
   }

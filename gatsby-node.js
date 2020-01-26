@@ -20,6 +20,7 @@ exports.createPages = ({ graphql, actions }) => {
             allWordpressWpWorks {
               edges {
                 node {
+                  title
                   slug
                   acf {
                     videowork
@@ -39,18 +40,20 @@ exports.createPages = ({ graphql, actions }) => {
           const path = node.slug
           if (node.acf.videowork) {
             createPage({
-              path,
+              path: "Works/" + path,
               component: videoWorkTemplate,
               context: {
                 slug: path,
+                pagename: node.title,
               },
             })
           } else {
             createPage({
-              path,
+              path: "Works/" + path,
               component: workTemplate,
               context: {
                 slug: path,
+                pagename: node.title,
               },
             })
           }

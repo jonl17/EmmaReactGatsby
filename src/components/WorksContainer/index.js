@@ -1,12 +1,11 @@
 import React from "react"
+import { useSelector } from "react-redux"
 
+/** components */
 import Block from "../NewsBlock"
 import Img from "gatsby-image"
 import ExitBtn from "../ExitButton"
 import NextBtn from "../NextButton"
-
-import { connect } from "react-redux"
-
 import {
   ContainerStyled,
   TitleContainer,
@@ -15,11 +14,11 @@ import {
   DescriptionBox,
 } from "./Styled"
 
-const Container = ({ artwork, device }) => {
+const Container = ({ artwork }) => {
   const { description, myndir, material, year } = artwork.acf
-  console.log(artwork)
+  const device = useSelector(state => state.reducer.device)
   return (
-    <ContainerStyled>
+    <ContainerStyled device={device}>
       <ExitBtn></ExitBtn>
       <TitleContainer device={device}>
         <Title>{artwork.title.replace("#038;", "")}</Title>
@@ -46,8 +45,4 @@ const Container = ({ artwork, device }) => {
   )
 }
 
-const mapStateToProps = state => ({
-  device: state.reducer.device,
-})
-
-export default connect(mapStateToProps)(Container)
+export default Container
