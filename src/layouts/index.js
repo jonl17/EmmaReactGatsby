@@ -7,6 +7,7 @@ import { connect } from "react-redux"
 import { Container } from "./Styled"
 import SEO from "../components/SEO"
 import Header from "../components/Header"
+import Copyright from "../components/Copyright"
 
 class Layout extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class Layout extends React.Component {
         <GlobalStyles></GlobalStyles>
         <Header></Header>
         <Container>{children}</Container>
+        <Copyright></Copyright>
       </>
     )
   }
