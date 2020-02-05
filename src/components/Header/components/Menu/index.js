@@ -8,6 +8,7 @@ import { Container, Item, Text } from "./Styled"
 const Menu = ({ items }) => {
   const device = useSelector(state => state.reducer.device)
   const dispatch = useDispatch()
+  console.log(device)
   return (
     <Container device={device}>
       {items.map((item, index) => (

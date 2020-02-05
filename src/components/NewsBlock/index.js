@@ -5,6 +5,7 @@ import { connect } from "react-redux"
 export const BlockStyled = styled.div`
   width: 100%;
   box-sizing: border-box;
+  margin: auto;
   ${props =>
     props.device === `browser` &&
     css`
@@ -16,15 +17,11 @@ export const BlockStyled = styled.div`
       padding-bottom: 25px;
     `}
   ${props =>
-    props.device === `mobileL` &&
+    props.device === `mobile` &&
     css`
       padding-bottom: 25px;
     `}
-  ${props =>
-    props.device === `mobileS` &&
-    css`
-      padding-bottom: 25px;
-    `}
+
 `
 
 const Block = ({ children, device }) => {

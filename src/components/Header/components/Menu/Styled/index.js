@@ -8,7 +8,8 @@ export const Container = styled.div`
   ${props =>
     props.device === `mobile` &&
     css`
-      margin: auto;
+      margin-right: auto;
+      padding-left: 22px;
     `}
 `
 export const Text = styled.p``

@@ -18,7 +18,11 @@ const Header = ({
   const dispatch = useDispatch()
   return (
     <Container device={device}>
-      <Title onClick={() => dispatch(setPagenamePrefix(""))} to="/">
+      <Title
+        device={device}
+        onClick={() => dispatch(setPagenamePrefix(""))}
+        to="/"
+      >
         {title}
       </Title>
       <Menu items={menuItems}></Menu>

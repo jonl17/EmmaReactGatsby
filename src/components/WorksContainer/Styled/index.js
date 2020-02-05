@@ -37,6 +37,8 @@ export const Year = styled.h2`
   margin-top: auto;
   margin-bottom: auto;
   font-size: 20px;
+  font-weight: normal;
+
   ${props =>
     props.device === `browser` &&
     css`
@@ -57,6 +59,7 @@ export const Year = styled.h2`
 export const Title = styled.h1`
   margin: 0;
   font-size: 20px;
+  font-weight: normal;
 `
 
 export const DescriptionBox = styled.div`

@@ -15,14 +15,9 @@ export const Container = styled.div`
       padding: 25px 0 25px 50px;
     `}
   ${props =>
-    props.device === `tablet` &&
-    css`
-      padding: 25px 0 25px 50px;
-    `}
-  ${props =>
     props.device === `mobile` &&
     css`
-      padding: 35px;
+      padding: 65px 15px 15px;
     `}
 `
 
@@ -30,4 +25,10 @@ export const Title = styled(Link)`
   font-size: 25px;
   text-decoration: none;
   color: black;
+  ${props =>
+    props.device === `mobile` &&
+    css`
+      margin-right: auto;
+      padding-left: 22px;
+    `}
 `

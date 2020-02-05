@@ -16,6 +16,7 @@ const Layout = ({ children }) => {
     dispatch({ type: SET_DEVICE, width: window.innerWidth })
   }
   useEffect(() => {
+    callBack()
     window.addEventListener("resize", callBack)
     return () => {
       window.removeEventListener("resize", callBack)
