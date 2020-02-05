@@ -27,5 +27,5 @@ export const Grid = styled.div`
   margin: auto;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   box-sizing: border-box;
-  padding: 25px 25px 50px 25px;
+  padding: 25px 25px 75px 25px;
 `

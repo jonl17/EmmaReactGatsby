@@ -17,6 +17,6 @@ export const PageWrapStyle = styled.div`
     ${props =>
       props.device === `mobile` &&
       css`
-        padding: 25px;
+        padding: 25px 25px 75px 25px;
       `}
 `
