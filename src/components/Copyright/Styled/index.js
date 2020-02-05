@@ -7,4 +7,5 @@ export const Text = styled.p`
   float: right;
   box-sizing: border-box;
   padding-right: 15px;
+  margin-top: -31px;
 `

@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useEffect } from "react"
+import "./fonts.css"
 import { GlobalStyles } from "../components/GlobalStyles"
-import { setDevice } from "../state/actions"
-import { connect } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { SET_DEVICE } from "../state/actions"
 
 /** components */
 import { Container } from "./Styled"
@@ -9,35 +10,29 @@ import SEO from "../components/SEO"
 import Header from "../components/Header"
 import Copyright from "../components/Copyright"
 
-class Layout extends React.Component {
-  constructor(props) {
-    super(props)
-    this.callBack = this.callBack.bind(this)
+const Layout = ({ children }) => {
+  const dispatch = useDispatch()
+  const callBack = () => {
+    dispatch({ type: SET_DEVICE, width: window.innerWidth })
   }
-  componentDidMount() {
-    this.callBack()
-    window.addEventListener("resize", this.callBack)
-  }
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.callBack)
-  }
-  callBack() {
-    const { dispatch } = this.props
-    dispatch(setDevice(window.innerWidth))
-  }
-  render() {
-    const { children, location } = this.props
-    console.log(location.pathname)
-    return (
-      <>
-        <SEO></SEO>
-        <GlobalStyles></GlobalStyles>
+  useEffect(() => {
+    window.addEventListener("resize", callBack)
+    return () => {
+      window.removeEventListener("resize", callBack)
+    }
+  })
+  const device = useSelector(state => state.reducer.device)
+  return (
+    <>
+      <SEO></SEO>
+      <GlobalStyles></GlobalStyles>
+      <Container show={device !== undefined}>
         <Header></Header>
-        <Container>{children}</Container>
-        <Copyright></Copyright>
-      </>
-    )
-  }
+        {children}
+      </Container>
+      <Copyright></Copyright>
+    </>
+  )
 }
 
-export default connect()(Layout)
+export default Layout

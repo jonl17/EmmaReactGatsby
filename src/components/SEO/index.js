@@ -46,7 +46,6 @@ const SEO = () => {
               />
             )}
             <link rel="shortcut icon" type="image/png" href={favicon}></link>
-            <link rel="stylesheet" type="text/css" href="fonts/fonts.css" />
           </Helmet>
         </>
       )}

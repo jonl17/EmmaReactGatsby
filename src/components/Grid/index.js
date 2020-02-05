@@ -9,11 +9,12 @@ export const NewsGrid = styled.div`
   box-sizing: border-box;
   max-width: 750px;
   padding-top: 50px;
+  padding-bottom: 50px;
   ${props =>
     props.device === `mobile` &&
     css`
       grid-gap: 10px;
-      padding-top: 0;
+      padding: 0 33px 75px 33px;
     `}
 `
 
@@ -26,5 +27,5 @@ export const Grid = styled.div`
   margin: auto;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   box-sizing: border-box;
-  padding: 25px;
+  padding: 25px 25px 50px 25px;
 `

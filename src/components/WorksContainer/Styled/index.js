@@ -7,7 +7,7 @@ export const ContainerStyled = styled.div`
       display: grid;
       grid-gap: 15px;
       box-sizing: border-box;
-      padding: 15px;
+      padding: 0px;
     `}
 `
 
