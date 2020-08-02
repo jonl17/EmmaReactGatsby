@@ -13,36 +13,14 @@ const Text = styled.p`
   color: black;
 `
 
-const About = ({ data }) => {
-  const { acf } = data.wordpressPage
-  const { about, birth, lives, email } = acf
+const About = () => {
   return (
     <>
       <PageWrap>
-        <p>{birth}</p>
-        <p>{lives}</p>
-        <p>{about}</p>
-        <Contact>
-          <Text>Contact:</Text>
-          <Text>{email}</Text>
-        </Contact>
+        <p>about page</p>
       </PageWrap>
     </>
   )
 }
-
-export const query = graphql`
-  query {
-    wordpressPage(slug: { eq: "about" }) {
-      title
-      acf {
-        about
-        birth
-        lives
-        email
-      }
-    }
-  }
-`
 
 export default About

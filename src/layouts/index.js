@@ -25,10 +25,9 @@ const Layout = ({ children }) => {
   const device = useSelector(state => state.reducer.device)
   return (
     <>
-      <SEO></SEO>
       <GlobalStyles></GlobalStyles>
       <Container show={device !== undefined}>
-        <Header></Header>
+        {/* <Header></Header> */}
         {children}
       </Container>
       <Copyright></Copyright>

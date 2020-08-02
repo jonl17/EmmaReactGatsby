@@ -21,7 +21,7 @@ const Header = ({
       <Title
         device={device}
         onClick={() => dispatch(setPagenamePrefix(""))}
-        to="/"
+        to='/'
       >
         {title}
       </Title>

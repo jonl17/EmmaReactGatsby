@@ -18,24 +18,35 @@ module.exports = {
     ],
   },
   plugins: [
+    {
+      resolve: "gatsby-source-prismic-graphql",
+      options: {
+        repositoryName: "emmaheidarsdottir",
+        defaultLang: "is",
+        accessToken: process.env.GATSBY_PRISMIC_ACCESS_TOKEN,
+        sharpKeys: [/image|photo|picture/],
+        pages: [
+          {
+            type: "Page",
+            match: "/:uid",
+            preview: "/page-preview",
+            component: require.resolve("./src/templates/Page.js"),
+            sortBy: "meta_lastPublicationDate_ASC",
+          },
+          {
+            type: "Work",
+            match: "/work/:uid",
+            preview: "/work-preview",
+            component: require.resolve("./src/templates/Work.js"),
+            sortBy: "meta_lastPublicationDate_ASC",
+          },
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-layout`,
-    {
-      resolve: "gatsby-source-wordpress",
-      options: {
-        baseUrl: "bakendi.emmaheidarsdottir.info/",
-        protocol: "https",
-        hostingWPCOM: false,
-        useACF: true,
-        includedRoutes: ["**/pages", "**/media", "**/works"],
-        excludedRoutes: ["**/posts/1456"],
-        normalizer: function({ entities }) {
-          return entities
-        },
-      },
-    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
