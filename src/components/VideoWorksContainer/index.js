@@ -15,14 +15,14 @@ import {
 
 import { Container, Video } from "./Styled"
 
-const VideoContainer = ({ artwork, device }) => {
+const VideoContainer = ({ artwork }) => {
   const { description, video, material, year } = artwork.acf
   return (
-    <ContainerStyled device={device}>
+    <ContainerStyled>
       <ExitBtn></ExitBtn>
-      <TitleContainer device={device}>
+      <TitleContainer>
         <Title>{artwork.title.replace("#038;", "")}</Title>
-        <Year device={device}>{year}</Year>
+        <Year>{year}</Year>
       </TitleContainer>
       <DescriptionBox>
         <p>{description}</p>
@@ -36,8 +36,4 @@ const VideoContainer = ({ artwork, device }) => {
   )
 }
 
-const mapStateToProps = state => ({
-  device: state.reducer.device,
-})
-
-export default connect(mapStateToProps)(VideoContainer)
+export default VideoContainer

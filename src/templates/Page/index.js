@@ -1,24 +1,25 @@
 import React from "react"
 import { graphql } from "gatsby"
-import SliceZone from "../components/sliceZone"
-import PageWrap from "../components/PageWrap"
+import SliceZone from "../../components/sliceZone"
+import PageWrap from "../../components/PageWrap"
+import Navigation from "../../components/Navigation"
 
 const Page = ({ data }) => {
   const prismicContent = data.prismic.allPages.edges[0]
-  console.log(data)
   if (!prismicContent) {
     return null
   }
   const document = prismicContent.node
 
   return (
-    <PageWrap>
-      <SliceZone sliceZone={document.body} />
-    </PageWrap>
+    <>
+      <PageWrap>
+        <Navigation />
+        <SliceZone sliceZone={document.body} />
+      </PageWrap>
+    </>
   )
 }
-
-export default Page
 
 export const query = graphql`
   query PageQuery($uid: String) {
@@ -46,3 +47,5 @@ export const query = graphql`
     }
   }
 `
+
+export default Page

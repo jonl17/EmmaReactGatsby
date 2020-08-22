@@ -19,7 +19,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-source-prismic-graphql",
+      resolve: "@prismicio/gatsby-source-prismic-graphql",
       options: {
         repositoryName: "emmaheidarsdottir",
         defaultLang: "is",
@@ -30,14 +30,14 @@ module.exports = {
             type: "Page",
             match: "/:uid",
             preview: "/page-preview",
-            component: require.resolve("./src/templates/Page.js"),
+            component: require.resolve("./src/templates/Page"),
             sortBy: "meta_lastPublicationDate_ASC",
           },
           {
             type: "Work",
             match: "/work/:uid",
             preview: "/work-preview",
-            component: require.resolve("./src/templates/Work.js"),
+            component: require.resolve("./src/templates/Work"),
             sortBy: "meta_lastPublicationDate_ASC",
           },
         ],
@@ -47,6 +47,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-layout`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

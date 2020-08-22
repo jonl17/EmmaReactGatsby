@@ -6,11 +6,11 @@ import { connect } from "react-redux"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const News = ({ device }) => {
+const News = () => {
   const data = []
   return (
     <>
-      <NewsGrid device={device}>
+      <NewsGrid>
         {data.map((item, index) => (
           <Block key={index}>
             {item.ein_faersla.mynd === null ? (
@@ -27,8 +27,4 @@ const News = ({ device }) => {
   )
 }
 
-const mapStateToProps = state => ({
-  device: state.reducer.device,
-})
-
-export default connect(mapStateToProps)(News)
+export default News

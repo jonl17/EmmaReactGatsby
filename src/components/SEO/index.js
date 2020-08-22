@@ -1,11 +1,8 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import { StaticQuery, graphql } from "gatsby"
 import favicon from "../../../static/icon.png"
-import { useSelector } from "react-redux"
 
 const SEO = () => {
-  const pagenamePrefix = useSelector(state => state.reducer.pagenamePrefix)
   return (
     <Helmet title='Emma Heiðarsdóttir'></Helmet>
     // <StaticQuery

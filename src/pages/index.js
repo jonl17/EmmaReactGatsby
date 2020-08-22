@@ -1,47 +1,42 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { connect } from "react-redux"
-import { setCurrentWorkIndex } from "../state/actions"
+import SliceZone from "../components/sliceZone"
 
-/** components */
-import { Grid } from "../components/Grid"
-import TextBox from "../components/FrontBoxText"
-import Img from "gatsby-image"
-
-const index = ({ data, device, dispatch }) => {
-  if (true) {
-    return <p>hello</p>
-  } else {
-    return (
-      <>
-        <Grid device={device}>
-          {data.allWordpressWpWorks.edges.map((item, index) => (
-            <Link
-              style={{
-                position: "relative",
-                display: "grid",
-              }} /* doing this inline so titles stick inside boxes */
-              key={index}
-              to={"/Works/" + item.node.slug}
-              onClick={() => dispatch(setCurrentWorkIndex(index))}
-            >
-              <Img
-                key={index}
-                fluid={
-                  item.node.acf.frontpage_image.localFile.childImageSharp.fluid
-                }
-              ></Img>
-              <TextBox> {item.node.title.replace("#038;", "")}</TextBox>
-            </Link>
-          ))}
-        </Grid>
-      </>
-    )
-  }
+const index = ({ data }) => {
+  const { edges } = data.prismic.allHomepages
+  return <SliceZone sliceZone={edges[0].node.body} />
 }
 
-const mapStateToProps = state => ({
-  device: state.reducer.device,
-})
+export default index
 
-export default connect(mapStateToProps)(index)
+export const query = graphql`
+  {
+    prismic {
+      allHomepages {
+        edges {
+          node {
+            body {
+              __typename
+              ... on PRISMIC_HomepageBodyImage_gallery {
+                type
+                label
+                fields {
+                  link_to_work {
+                    ... on PRISMIC_Work {
+                      _meta {
+                        uid
+                        type
+                      }
+                      title
+                      frontpage_image
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

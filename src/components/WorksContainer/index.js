@@ -1,5 +1,4 @@
 import React from "react"
-import { useSelector } from "react-redux"
 
 /** components */
 import Block from "../NewsBlock"
@@ -16,13 +15,12 @@ import {
 
 const Container = ({ artwork }) => {
   const { description, myndir, material, year } = artwork.acf
-  const device = useSelector(state => state.reducer.device)
   return (
-    <ContainerStyled device={device}>
+    <ContainerStyled>
       <ExitBtn></ExitBtn>
-      <TitleContainer device={device}>
+      <TitleContainer>
         <Title>{artwork.title.replace("#038;", "")}</Title>
-        <Year device={device}>{year}</Year>
+        <Year>{year}</Year>
       </TitleContainer>
       <DescriptionBox>
         <p>{description}</p>

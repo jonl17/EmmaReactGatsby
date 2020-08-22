@@ -24,12 +24,8 @@ export const BlockStyled = styled.div`
 
 `
 
-const Block = ({ children, device }) => {
-  return <BlockStyled device={device}>{children}</BlockStyled>
+const Block = ({ children }) => {
+  return <BlockStyled>{children}</BlockStyled>
 }
 
-const mapStateToProps = state => ({
-  device: state.reducer.device,
-})
-
-export default connect(mapStateToProps)(Block)
+export default Block
