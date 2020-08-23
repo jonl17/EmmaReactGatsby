@@ -19,13 +19,12 @@ export const NewsGrid = styled.div`
 `
 
 export const Grid = styled.div`
-  display: grid;
-  grid-gap: 10px;
+  display: flex;
   height: 100%;
   width: 100%;
   max-width: 750px;
   margin: auto;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  flex-wrap: wrap;
   box-sizing: border-box;
   padding: 25px 25px 75px 25px;
 `

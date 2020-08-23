@@ -1,15 +1,16 @@
 import React, { useEffect } from "react"
 import "./fonts.css"
-import { GlobalStyles } from "../components/GlobalStyles"
+import "./global.scss"
 
 /** components */
 import { Container } from "./Styled"
 import Copyright from "../components/Copyright"
+import Navigation from "../components/Navigation"
 
 const Layout = ({ children }) => {
   return (
     <>
-      <GlobalStyles></GlobalStyles>
+      <Navigation />
       <Container>{children}</Container>
       <Copyright></Copyright>
     </>

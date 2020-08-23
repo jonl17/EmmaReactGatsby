@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import SliceZone from "../../components/sliceZone"
 import PageWrap from "../../components/PageWrap"
-import Navigation from "../../components/Navigation"
 
 const Page = ({ data }) => {
   const prismicContent = data.prismic.allPages.edges[0]
@@ -14,7 +13,6 @@ const Page = ({ data }) => {
   return (
     <>
       <PageWrap>
-        <Navigation />
         <SliceZone sliceZone={document.body} />
       </PageWrap>
     </>

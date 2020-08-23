@@ -8,10 +8,9 @@ const ImageGallery = ({ slice }) => {
   return (
     <Grid>
       {slice.fields.map((field, idx) => {
-        console.log(field)
         return (
           <Link
-            className="position-relative d-flex justify-content-center workBox"
+            className="position-relative d-flex justify-content-center workBox m-2"
             to={`/work/${field.link_to_work._meta.uid}`}
             key={idx}
           >
