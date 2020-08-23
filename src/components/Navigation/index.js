@@ -58,9 +58,10 @@ const Menu = ({ links }) => (
 )
 
 const Navigation = ({ data }) => {
+  if (!data) return null
   const { links } = data.prismic.allNavigations.edges[0].node
   return (
-    <div className="p-5">
+    <div className="navigationContainer p-5">
       <Link to="/">
         <h3 className="mt-0 text-dark">Emma Heiðarsdóttir</h3>
       </Link>

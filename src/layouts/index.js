@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navigation />
-      <Container>{children}</Container>
+      <div className="container">{children}</div>
       <Copyright></Copyright>
     </>
   )

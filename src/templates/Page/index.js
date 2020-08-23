@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import SliceZone from "../../components/sliceZone"
-import PageWrap from "../../components/PageWrap"
 
 const Page = ({ data }) => {
   const prismicContent = data.prismic.allPages.edges[0]
@@ -12,9 +11,9 @@ const Page = ({ data }) => {
 
   return (
     <>
-      <PageWrap>
+      <div className="container">
         <SliceZone sliceZone={document.body} />
-      </PageWrap>
+      </div>
     </>
   )
 }

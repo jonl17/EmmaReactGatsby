@@ -22,8 +22,6 @@ export const Grid = styled.div`
   display: flex;
   height: 100%;
   width: 100%;
-  max-width: 750px;
-  margin: auto;
   flex-wrap: wrap;
   box-sizing: border-box;
   padding: 25px 25px 75px 25px;
